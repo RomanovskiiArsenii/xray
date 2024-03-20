@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        :root {
+            --fontSize: calc(18vw + 18vh);
+            --duration: 60s;
+        }
+
+        @media screen and (orientation: portrait) {
+            :root {
+                --fontSize: calc(18vw + 36vh);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+        }
+
+        .xray {
+            background-image: url(radiography.jpg);
+            background-size: cover;
+            filter: contrast(180%);
+        }
+
+        .xray__wrapper {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .xray__content {
+            display: flex;
+        }
+
+        .xray__line {
+            font-weight: 600;
+            font-size: var(--fontSize);
+            line-height: 1em;
+            text-transform: uppercase;
+            flex-shrink: 0;
+            flex-basis: 100%;
+            white-space: nowrap;
+            mix-blend-mode: exclusion;
+            color: white;
+        }
+
+        .top {
+            animation: moveLeft var(--duration) linear infinite;
+        }
+
+        .bottom {
+            animation: moveRight var(--duration) linear infinite;
+        }
+
+        @keyframes moveLeft {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes moveRight {
+            from {
+                transform: translateX(-100%) matrix(-1, 0, 0, 1, 0, 0);
+            }
+
+            to {
+                transform: translateX(0) matrix(-1, 0, 0, 1, 0, 0);
+            }
+        }
+
+        .credit {
+            position: fixed;
+            bottom: 0;
+            left: 10px;
+            border-radius: 18px;
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+            font-size: 16px;
+            color: black;
+        }
+
+        .credit a {
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="xray">
+        <div class="xray__wrapper">
+            <div class="xray__content">
+                <p class="xray__line top">Imagine your pain as a white ball of healing light That's right, your pain The
+                    pain
+                    itself is a white ball of healing light I don't think so.</p>
+                <p class="xray__line top">Imagine your pain as a white ball of healing light That's right, your pain The
+                    pain
+                    itself is a white ball of healing light I don't think so.</p>
+            </div>
+            <div class="xray__content">
+                <p class="xray__line bottom">Imagine your pain as a white ball of healing light That's right, your pain
+                    The
+                    pain
+                    itself is a white ball of healing light I don't think so.</p>
+                <p class="xray__line bottom">Imagine your pain as a white ball of healing light That's right, your pain
+                    The
+                    pain
+                    itself is a white ball of healing light I don't think so.</p>
+            </div>
+        </div>
+
+        <div class="credit">
+            Photo by <a
+                href="https://unsplash.com/@harlsta?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Harlie
+                Raethel</a> on <a
+                href="https://unsplash.com/photos/human-x-ray-result-chart-ouyjDk-KdfY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

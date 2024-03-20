@@ -10,13 +10,19 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
         :root {
-            --fontSize: calc(18vw + 18vh);
+            --fontSize: calc(16vw + 16vh);
             --duration: 60s;
         }
 
         @media screen and (orientation: portrait) {
             :root {
-                --fontSize: calc(18vw + 36vh);
+                --fontSize: calc(16vw + 32vh);
+            }
+        }
+
+        @media screen and (max-height: 600px) {
+            :root {
+                --fontSize: calc(10vw + 10vh);
             }
         }
 
